@@ -3,282 +3,430 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>30日で、夢に蓋をしていた自分と話す(仮)</title>
-<meta name="description" content="1日3問、声で答えるだけ。30日で夢が言葉になり、最初の一歩が見えてくる。話した内容はあなたのiPhoneの中だけに。">
+<title>私の取扱説明書|1日3問、声で答えるだけ。30日で夢が言葉になる(仮)</title>
+<meta name="description" content="40代・50代・60代のための、声で答える30日間の自分ノート。1日3問、3〜5分。話した内容はあなたのiPhoneの中だけに保存されます。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Zen+Maru+Gothic:wght@500;700;900&family=Shippori+Mincho:wght@700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Zen+Maru+Gothic:wght@700;900&family=Shippori+Mincho:wght@800&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="images/chest-closed.png" fetchpriority="high">
 <style>
+  /* ===== デザイン基準(reports/中高年向けコーチングLP設計.md 準拠) =====
+     本文17px・行間1.85・本文色#2b2b2b / 濃色背景の上は白か黄色の文字のみ
+     CTA:白文字×#C2410C(コントラスト約5.2:1)・高さ60px以上の全幅 */
   :root{
-    --navy:#14284b; --navy2:#1f3a6b; --orange:#ff6a1a; --orange2:#ff8f3d;
-    --yellow:#ffe14d; --cream:#fff8ec; --ink:#1d1d1f; --sub:#5b6472; --line:#f0e3cd;
+    --navy:#13294b; --navy2:#1d3d6e; --cta:#c2410c; --cta-dark:#8f2f08; --cta-light:#fb923c;
+    --yellow:#ffe15a; --cream:#fff8ec; --cream2:#fdf0da; --ink:#2b2b2b; --sub:#4a5260; --line:#efdfc3; --mint:#e7f5ef;
   }
   *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{margin:0;font-family:"Noto Sans JP",-apple-system,"Hiragino Sans",sans-serif;color:var(--ink);background:#fff;line-height:1.85;font-size:17px;padding-bottom:84px}
-  .wrap{max-width:760px;margin:0 auto;padding:0 20px}
-  section{padding:64px 0;position:relative}
-  p{margin:0 0 16px}
-  .rounded{font-family:"Zen Maru Gothic","Noto Sans JP",sans-serif}
-  .mincho{font-family:"Shippori Mincho",serif}
-  h1,h2,h3{margin:0;line-height:1.4}
-  h2{font-family:"Zen Maru Gothic",sans-serif;font-weight:900;font-size:clamp(26px,6.4vw,38px);text-align:center;margin-bottom:28px;color:var(--navy)}
-  .eyebrow{display:block;text-align:center;font-weight:700;letter-spacing:.2em;color:var(--orange);font-size:13px;margin-bottom:8px}
-  .mark{background:linear-gradient(transparent 58%,var(--yellow) 58%);padding:0 .1em;font-weight:900}
-  .red{color:#e8330c;font-weight:900}
-  .big{font-size:1.25em}
-  .sub{color:var(--sub);font-size:14px}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{margin:0;font-family:"BIZ UDPGothic","Hiragino Sans","Noto Sans JP",sans-serif;color:var(--ink);background:#fff;line-height:1.85;font-size:17px;padding-bottom:92px;font-feature-settings:"palt" 0}
+  img{max-width:100%;height:auto;display:block}
+  .wrap{max-width:720px;margin:0 auto;padding:0 22px}
+  section{padding:68px 0;position:relative}
+  p{margin:0 0 18px}
+  h1,h2,h3{margin:0;line-height:1.45}
+  h2{font-family:"Zen Maru Gothic",sans-serif;font-weight:900;font-size:clamp(26px,6.6vw,36px);text-align:center;margin-bottom:28px;color:var(--navy);letter-spacing:.02em}
+  h3{font-family:"Zen Maru Gothic",sans-serif;font-weight:900}
+  .eyebrow{display:block;text-align:center;font-weight:700;letter-spacing:.18em;color:var(--cta);font-size:14px;margin-bottom:6px}
+  .mark{background:linear-gradient(transparent 60%,var(--yellow) 60%);padding:0 .08em;font-weight:700}
+  .em{color:var(--cta);font-weight:700}
   .center{text-align:center}
-
-  /* HERO */
-  .hero{background:radial-gradient(circle at 20% 0%,#2a4f8f 0%,var(--navy) 55%,#0c1a33 100%);color:#fff;padding:56px 0 72px;overflow:hidden}
-  .badge{display:inline-block;background:var(--yellow);color:var(--navy);font-weight:900;border-radius:999px;padding:6px 16px;font-size:14px;margin-bottom:18px}
-  .hero h1{font-family:"Shippori Mincho",serif;font-weight:800;font-size:clamp(34px,9.4vw,58px);line-height:1.35;margin-bottom:20px}
-  .hero h1 em{font-style:normal;color:var(--yellow)}
-  .hero .lead{font-size:clamp(17px,4.4vw,21px);opacity:.95}
-  .hero .lead b{color:var(--yellow)}
-  .chips{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 28px}
-  .chip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);border-radius:14px;padding:10px 14px;text-align:center;flex:1 1 90px}
-  .chip b{display:block;font-family:"Zen Maru Gothic";font-size:26px;color:var(--yellow);line-height:1.2}
-  .chip span{font-size:12px;opacity:.9}
-  .emoji-hero{font-size:76px;text-align:center;margin:8px 0 0;filter:drop-shadow(0 8px 18px rgba(0,0,0,.35))}
-
-  /* BUTTON */
-  .btn{display:block;text-align:center;text-decoration:none;color:#fff;font-family:"Zen Maru Gothic";font-weight:900;font-size:clamp(19px,5vw,24px);padding:20px 24px;border-radius:999px;background:linear-gradient(180deg,var(--orange2),var(--orange));box-shadow:0 6px 0 #c2480a,0 14px 26px rgba(255,106,26,.45);position:relative;transition:transform .12s}
-  .btn:active{transform:translateY(4px);box-shadow:0 2px 0 #c2480a}
-  .btn small{display:block;font-size:13px;font-weight:700;opacity:.95}
-  .btn::after{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.45) 50%,transparent 70%);background-size:250% 100%;animation:shine 3.2s infinite}
-  @keyframes shine{0%{background-position:200% 0}60%,100%{background-position:-100% 0}}
-  .btn-wrap{max-width:460px;margin:0 auto}
-
-  /* 共感 */
+  .sub{color:var(--sub);font-size:15px}
   .bg-cream{background:var(--cream)}
-  .bubbles{display:grid;gap:14px}
-  .bubble{background:#fff;border:2px solid var(--line);border-radius:20px;padding:16px 18px 16px 62px;position:relative;font-weight:700;box-shadow:0 4px 0 var(--line)}
-  .bubble::before{content:"💭";position:absolute;left:16px;top:50%;transform:translateY(-50%);font-size:30px}
-  .turn{text-align:center;margin-top:30px;font-family:"Shippori Mincho",serif;font-size:clamp(22px,5.6vw,30px);font-weight:800;color:var(--navy);line-height:1.6}
-  .arrow{text-align:center;font-size:34px;color:var(--orange);margin:6px 0}
+  .bg-mint{background:var(--mint)}
 
-  /* STEP */
-  .steps{display:grid;gap:22px}
-  .step{background:#fff;border-radius:22px;padding:26px 22px 22px;box-shadow:0 10px 30px rgba(20,40,75,.12);position:relative;border-top:6px solid var(--orange)}
-  .step .no{position:absolute;top:-22px;left:18px;background:var(--navy);color:#fff;font-family:"Zen Maru Gothic";font-weight:900;border-radius:999px;padding:4px 18px;font-size:15px;letter-spacing:.1em}
-  .step .ico{font-size:44px;line-height:1}
-  .step h3{font-family:"Zen Maru Gothic";font-size:22px;color:var(--navy);margin:8px 0 6px}
-  .step p{margin:0}
+  /* ---------- CTA ---------- */
+  .cta-box{max-width:480px;margin:0 auto;text-align:center}
+  .btn{display:flex;flex-direction:column;justify-content:center;min-height:64px;text-decoration:none;color:#fff;font-family:"Zen Maru Gothic",sans-serif;font-weight:900;font-size:clamp(19px,5.2vw,23px);padding:14px 22px;border-radius:999px;background:var(--cta);box-shadow:0 6px 0 var(--cta-dark),0 14px 26px rgba(194,65,12,.35);position:relative;overflow:hidden;transition:transform .12s}
+  .btn:active{transform:translateY(4px);box-shadow:0 2px 0 var(--cta-dark)}
+  .btn::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,.4) 50%,transparent 65%);background-size:250% 100%;animation:shine 3.4s infinite}
+  @keyframes shine{0%{background-position:200% 0}60%,100%{background-position:-100% 0}}
+  .micro{display:flex;justify-content:center;flex-wrap:wrap;gap:6px 14px;margin-top:14px;font-size:14px;font-weight:700;color:var(--sub)}
+  .micro span::before{content:"✓ ";color:var(--cta)}
+  .on-dark .micro{color:#e8edf5}
+  .on-dark .micro span::before{color:var(--yellow)}
 
-  /* 30 DAYS */
+  /* ---------- HERO ---------- */
+  .hero{background:radial-gradient(circle at 15% 0%,#2d5394 0%,var(--navy) 55%,#0c1a33 100%);color:#fff;padding:40px 0 64px;overflow:hidden}
+  .target{display:inline-block;background:#fff;color:var(--navy);font-weight:700;border-radius:8px;padding:4px 12px;font-size:15px;margin-bottom:16px}
+  .hero h1{font-family:"Shippori Mincho",serif;font-weight:800;font-size:clamp(33px,9.2vw,54px);line-height:1.38;margin-bottom:18px;letter-spacing:.02em}
+  .hero h1 .y{color:var(--yellow)}
+  .hero .lead{font-size:clamp(18px,4.6vw,21px);color:#f2f5fa}
+  .hero .lead b{color:var(--yellow)}
+  .hero-visual{display:grid;grid-template-columns:1fr auto;align-items:end;gap:6px;margin:6px 0 20px}
+  .chest{width:150px;filter:drop-shadow(0 10px 20px rgba(0,0,0,.4));animation:bob 3.6s ease-in-out infinite}
+  @keyframes bob{50%{transform:translateY(-8px) rotate(-2deg)}}
+  .chips{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:8px 0 28px}
+  .chip{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.35);border-radius:16px;padding:12px 6px;text-align:center}
+  .chip b{display:block;font-family:"Zen Maru Gothic";font-size:clamp(22px,6vw,28px);color:var(--yellow);line-height:1.2}
+  .chip span{font-size:13px;color:#e8edf5}
+
+  /* ---------- 共感 ---------- */
+  .worries{display:grid;gap:14px}
+  .bubble{background:#fff;border:2px solid var(--line);border-radius:20px;padding:16px 18px;font-weight:700;box-shadow:0 4px 0 var(--line);display:flex;gap:12px;align-items:center}
+  .bubble i{font-style:normal;font-size:26px;flex:none}
+  .worry-figs{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:420px;margin:0 auto 26px}
+  .fig-circle{background:#fff;border-radius:50%;aspect-ratio:1;display:grid;place-items:center;padding:16%;box-shadow:0 6px 18px rgba(19,41,75,.1)}
+  .turn{text-align:center;margin-top:34px;font-family:"Shippori Mincho",serif;font-size:clamp(23px,5.8vw,30px);font-weight:800;color:var(--navy);line-height:1.65}
+  .down{display:block;text-align:center;color:var(--cta);font-size:28px;margin:18px 0 0;line-height:1}
+
+  /* ---------- 解決策 ---------- */
+  .solution{display:grid;gap:18px;align-items:center}
+  .solution .fig{max-width:240px;margin:0 auto}
+  .solution .copy{font-size:18px}
+
+  /* ---------- STEP ---------- */
+  .steps{display:grid;gap:30px}
+  .step{background:#fff;border-radius:22px;padding:30px 20px 22px;box-shadow:0 10px 30px rgba(19,41,75,.12);position:relative;border-top:6px solid var(--cta);display:grid;grid-template-columns:96px 1fr;gap:14px;align-items:center}
+  .step .no{position:absolute;top:-17px;left:18px;background:var(--navy);color:#fff;font-family:"Zen Maru Gothic";font-weight:900;border-radius:999px;padding:3px 16px;font-size:15px;letter-spacing:.1em}
+  .step .ico{width:96px;height:96px;border-radius:50%;background:var(--cream2);display:grid;place-items:center;padding:12px;font-size:44px}
+  .step h3{font-size:21px;color:var(--navy);margin-bottom:4px}
+  .step p{margin:0;font-size:16px}
+
+  /* ---------- 質問サンプル ---------- */
+  .qs{display:grid;gap:12px}
+  .q{background:#fff;border-radius:18px;padding:16px 18px;border-left:6px solid var(--cta);box-shadow:0 4px 14px rgba(19,41,75,.08)}
+  .q small{display:block;color:var(--cta);font-weight:700;font-size:13px;letter-spacing:.08em}
+  .q p{margin:2px 0 0;font-weight:700;font-size:18px;color:var(--navy)}
+
+  /* ---------- 30日 ---------- */
   .days{background:var(--navy);color:#fff}
   .days h2{color:#fff}
-  .cal{display:grid;grid-template-columns:repeat(10,1fr);gap:6px;max-width:520px;margin:0 auto 22px}
-  .cal i{aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.14);display:block}
+  .days .eyebrow{color:var(--yellow)}
+  .cal{display:grid;grid-template-columns:repeat(10,1fr);gap:7px;max-width:520px;margin:0 auto 14px}
+  .cal i{aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.16);display:block}
   .cal i.on{background:var(--yellow)}
-  .cal i.hot{background:var(--orange);box-shadow:0 0 0 3px rgba(255,106,26,.4)}
-  .phase{display:grid;gap:12px;margin-top:24px}
-  .phase div{background:rgba(255,255,255,.08);border-left:5px solid var(--yellow);border-radius:12px;padding:12px 16px}
-  .phase b{color:var(--yellow);font-family:"Zen Maru Gothic"}
+  .cal i.off{background:transparent;border:2px dashed rgba(255,255,255,.45)}
+  .cal i.goal{background:var(--cta-light);box-shadow:0 0 0 3px rgba(251,146,60,.4)}
+  .legend{text-align:center;font-size:15px;color:#e8edf5;margin-bottom:26px}
+  .phase{display:grid;gap:12px}
+  .phase div{background:rgba(255,255,255,.08);border-left:5px solid var(--yellow);border-radius:12px;padding:14px 16px;color:#f2f5fa}
+  .phase b{color:var(--yellow);font-family:"Zen Maru Gothic";font-size:18px}
 
-  /* 事実か思い込みか */
+  /* ---------- 事実か思い込みか ---------- */
+  .key-visual{max-width:220px;margin:0 auto 18px}
   .ba{display:grid;gap:12px}
   .ba .row{background:#fff;border:2px solid var(--line);border-radius:18px;padding:14px 16px}
-  .ba .before{color:var(--sub);text-decoration:line-through;text-decoration-color:#e8330c}
-  .ba .after{font-weight:900;color:var(--navy)}
-  .ba .after::before{content:"→ ";color:var(--orange)}
+  .ba .before{color:var(--sub);text-decoration:line-through;text-decoration-color:#c2410c;text-decoration-thickness:2px}
+  .ba .after{font-weight:700;color:var(--navy);font-size:18px}
+  .ba .after::before{content:"→ ";color:var(--cta)}
 
-  /* ひとりで/AI/コーチ */
+  /* ---------- 夢の例 ---------- */
+  .dream{display:grid;gap:16px;align-items:center;background:#fff;border-radius:24px;padding:24px;box-shadow:0 10px 30px rgba(19,41,75,.1)}
+  .dream img{max-width:260px;margin:0 auto}
+  .dream blockquote{margin:0;font-family:"Shippori Mincho",serif;font-weight:800;font-size:20px;color:var(--navy);line-height:1.7}
+
+  /* ---------- 完成後 ---------- */
   .opts{display:grid;gap:16px}
-  .opt{background:#fff;border-radius:20px;padding:22px;box-shadow:0 8px 24px rgba(20,40,75,.1);border:2px solid var(--line)}
-  .opt.rec{border-color:var(--orange);position:relative}
-  .opt.rec::before{content:"おすすめ";position:absolute;top:-13px;right:18px;background:var(--orange);color:#fff;font-weight:900;font-size:13px;border-radius:999px;padding:2px 14px}
-  .opt h3{font-family:"Zen Maru Gothic";font-size:20px;color:var(--navy);margin-bottom:6px}
+  .opt{background:#fff;border-radius:20px;padding:18px;box-shadow:0 8px 24px rgba(19,41,75,.08);border:2px solid var(--line);display:grid;grid-template-columns:84px 1fr;gap:14px;align-items:center}
+  .opt img{width:84px;height:84px;object-fit:contain}
+  .opt h3{font-size:19px;color:var(--navy);margin-bottom:2px}
+  .opt p{margin:0;font-size:16px}
+  .opt.rec{border-color:var(--cta);position:relative}
+  .opt.rec::before{content:"じっくり進めたい方に";position:absolute;top:-14px;right:14px;background:var(--cta);color:#fff;font-weight:700;font-size:13px;border-radius:999px;padding:2px 12px}
 
-  /* privacy */
-  .lock{background:linear-gradient(180deg,#eef4ff,#fff)}
-  .checks{list-style:none;padding:0;margin:0 0 8px;display:grid;gap:12px}
-  .checks li{background:#fff;border-radius:16px;padding:16px 16px 16px 56px;position:relative;font-weight:700;box-shadow:0 4px 14px rgba(20,40,75,.08)}
-  .checks li::before{content:"✔";position:absolute;left:16px;top:50%;transform:translateY(-50%);width:28px;height:28px;border-radius:50%;background:var(--orange);color:#fff;display:grid;place-items:center;font-size:16px}
+  /* ---------- privacy ---------- */
+  .privacy{display:grid;gap:14px}
+  .privacy .fig{max-width:150px;margin:0 auto}
+  .checks{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+  .checks li{background:#fff;border-radius:16px;padding:15px 16px 15px 54px;position:relative;font-weight:700;box-shadow:0 4px 14px rgba(19,41,75,.08)}
+  .checks li::before{content:"✓";position:absolute;left:14px;top:50%;transform:translateY(-50%);width:28px;height:28px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-size:16px}
 
-  /* FAQ */
+  /* ---------- 向いている/向いていない ---------- */
+  .fit{display:grid;gap:14px}
+  .fit div{border-radius:18px;padding:18px 20px}
+  .fit .yes{background:#fff;border:2px solid var(--cta)}
+  .fit .no{background:#f3f4f6;border:2px solid #d5d9df}
+  .fit h3{font-size:19px;margin-bottom:6px;color:var(--navy)}
+  .fit ul{margin:0;padding-left:1.2em}
+
+  /* ---------- profile ---------- */
+  .profile{background:#fff;border-radius:24px;padding:24px;box-shadow:0 10px 30px rgba(19,41,75,.1)}
+  .avatar{width:120px;height:120px;border-radius:50%;background:var(--cream2);display:grid;place-items:center;margin:0 auto 14px;font-size:13px;color:var(--sub);text-align:center;border:3px solid #fff;box-shadow:0 4px 14px rgba(0,0,0,.1)}
+
+  /* ---------- FAQ ---------- */
   details{background:#fff;border:2px solid var(--line);border-radius:16px;padding:16px 18px;margin-bottom:12px}
-  summary{cursor:pointer;font-weight:900;font-family:"Zen Maru Gothic";color:var(--navy);list-style:none;position:relative;padding-right:28px}
+  summary{cursor:pointer;font-weight:700;font-family:"Zen Maru Gothic";font-size:18px;color:var(--navy);list-style:none;position:relative;padding:0 30px 0 34px;min-height:28px}
   summary::-webkit-details-marker{display:none}
-  summary::after{content:"＋";position:absolute;right:0;color:var(--orange);font-size:22px;line-height:1}
+  summary::before{content:"Q";position:absolute;left:0;top:0;color:var(--cta);font-weight:900}
+  summary::after{content:"+";position:absolute;right:0;top:-2px;color:var(--cta);font-size:24px;line-height:1}
   details[open] summary::after{content:"−"}
   details p{margin:12px 0 0}
 
-  /* final */
-  .final{background:radial-gradient(circle at 80% 0%,#2a4f8f,var(--navy) 60%);color:#fff;text-align:center}
+  /* ---------- final ---------- */
+  .final{background:radial-gradient(circle at 85% 0%,#2d5394,var(--navy) 60%);color:#fff;text-align:center}
   .final h2{color:#fff}
-  .final .mark{background:none;color:var(--yellow);text-shadow:0 2px 12px rgba(0,0,0,.45)}
+  .final h2 .y{color:var(--yellow)}
+  .final .eyebrow{color:var(--yellow)}
+  .final p{color:#f2f5fa}
+  .final .joy{width:130px;margin:0 auto 14px;filter:drop-shadow(0 10px 18px rgba(0,0,0,.35))}
+  .offer{background:#fff;color:var(--ink);border-radius:20px;padding:18px;margin:0 auto 26px;max-width:480px;text-align:left;border:3px solid var(--yellow)}
+  .offer b{color:var(--cta)}
 
-  /* sticky */
-  .sticky{position:fixed;left:0;right:0;bottom:0;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.95);backdrop-filter:blur(8px);box-shadow:0 -6px 20px rgba(0,0,0,.12);z-index:50}
-  .sticky .btn{padding:14px 18px;font-size:18px;max-width:460px;margin:0 auto}
+  /* ---------- sticky ---------- */
+  .sticky{position:fixed;left:0;right:0;bottom:0;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);backdrop-filter:blur(8px);box-shadow:0 -6px 20px rgba(0,0,0,.12);z-index:50;transform:translateY(110%);transition:transform .3s}
+  .sticky.show{transform:none}
+  .sticky .btn{min-height:56px;font-size:18px;max-width:480px;margin:0 auto}
 
   .ph{background:#fff3a8;color:#222;padding:0 4px;border-radius:4px}
-  /* いらすとや等の画像を差し込む枠(後で <img> に置き換え) */
-  .img-slot{display:grid;place-items:center;min-height:160px;margin:0 auto 20px;border:2px dashed #c9b790;border-radius:18px;color:#a2916a;background:#fffdf6;font-size:13px;text-align:center;padding:12px}
-  footer{background:#0c1a33;color:#aeb8c9;font-size:12px;padding:28px 0 100px}
-  .reveal{opacity:0;transform:translateY(24px);transition:.7s}
+  footer{background:#0c1a33;color:#c9d2e0;font-size:14px;padding:30px 0 110px}
+  footer p{margin:0 0 10px}
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .4s,transform .4s}
   .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){
+    .btn::after,.chest{animation:none}
+    .reveal{opacity:1;transform:none;transition:none}
+    html{scroll-behavior:auto}
+  }
+  @media (min-width:640px){
+    .solution{grid-template-columns:220px 1fr}
+    .dream{grid-template-columns:240px 1fr}
+    .privacy{grid-template-columns:150px 1fr;align-items:center}
+  }
 </style>
 </head>
 <body>
 
-<!-- ============ HERO ============ -->
+<!-- ============ 1. FV(対象を絞る+約束+CTA) ============ -->
 <section class="hero">
-  <div class="wrap">
-    <span class="badge">事前登録受付中・無料</span>
-    <h1>その夢、<br><em>「どうせ無理」</em>と<br>蓋をしていませんか?</h1>
-    <p class="lead">1日<b>3問</b>、<b>声で答えるだけ</b>。<br>30日後、忘れていた夢が言葉になり、<br><b>最初の一歩</b>が見えてきます。</p>
+  <div class="wrap on-dark">
+    <span class="target">40代・50代・60代の、忙しいあなたへ</span>
+    <h1>しまい込んだ夢、<br><span class="y">声に出して</span><br>取り出しませんか。</h1>
+    <div class="hero-visual">
+      <p class="lead">1日<b>3問</b>に、<b>声で答えるだけ</b>。<br>30日で、あなたの夢と<br>最初の一歩が<b>言葉</b>になります。</p>
+      <img class="chest" src="images/chest-closed.png" width="400" height="399" alt="ふたの閉じた宝箱のイラスト">
+    </div>
     <div class="chips">
       <div class="chip"><b>3問</b><span>1日あたり</span></div>
-      <div class="chip"><b>3〜5分</b><span>声で話すだけ</span></div>
+      <div class="chip"><b>3〜5分</b><span>話すだけ</span></div>
       <div class="chip"><b>30日</b><span>休んでもOK</span></div>
     </div>
-    <div class="btn-wrap"><a class="btn" href="#signup">無料で事前登録する<small>公開時にいち早くご案内します</small></a></div>
-    <div class="emoji-hero">🎙️✨</div>
+    <div class="cta-box">
+      <a class="btn" href="#signup">無料で事前登録する</a>
+      <div class="micro"><span>30秒で完了</span><span>売り込みなし</span><span>いつでも解除OK</span></div>
+    </div>
   </div>
 </section>
 
-<!-- ============ 共感 ============ -->
+<!-- ============ 2. 問題・共感 ============ -->
 <section class="bg-cream">
   <div class="wrap">
-    <span class="eyebrow reveal">SOUND FAMILIAR?</span>
-    <h2 class="reveal">こんな気持ち、<br>ありませんか?</h2>
-    <div class="bubbles">
-      <div class="bubble reveal">「いつかやりたい」はあるのに、考え始めると手が止まる</div>
-      <div class="bubble reveal">忙しい毎日で、自分が何をしたいのか、わからなくなった</div>
-      <div class="bubble reveal">目標を立てても、心のどこかで「どうせ無理」と思っている</div>
-      <div class="bubble reveal">AIを使いたいのに、毎回「私は〇〇の仕事で…」と説明するのが面倒</div>
+    <span class="eyebrow reveal">こんな気持ち、ありませんか?</span>
+    <h2 class="reveal">「いつか」が、<br>ずっと「いつか」のまま</h2>
+    <div class="worry-figs reveal">
+      <div class="fig-circle"><img src="images/lost.png" width="342" height="400" alt="道しるべの前で迷う女性のイラスト" loading="lazy"></div>
+      <div class="fig-circle"><img src="images/worry.png" width="358" height="400" alt="頭を抱えて悩む男性のイラスト" loading="lazy"></div>
     </div>
-    <div class="arrow">▼</div>
-    <p class="turn reveal">夢がないのではありません。<br><span class="mark">蓋をしているだけ</span>かもしれません。</p>
+    <div class="worries">
+      <div class="bubble reveal"><i>💭</i>やりたいことはあるのに、考え始めると手が止まる</div>
+      <div class="bubble reveal"><i>💭</i>仕事と家のことで手一杯。自分が何をしたいのか、わからなくなった</div>
+      <div class="bubble reveal"><i>💭</i>夢を口にすると、心のどこかで「どうせ無理」「今じゃない」と打ち消してしまう</div>
+      <div class="bubble reveal"><i>💭</i>AIを使ってみたいけれど、毎回「私は〇〇の仕事で…」と説明するのが面倒</div>
+    </div>
+    <p class="turn reveal">夢がないのではありません。<br><span class="mark">ふたをしているだけ</span>かもしれません。</p>
+    <span class="down">▼</span>
   </div>
 </section>
 
-<!-- ============ 仕組み ============ -->
+<!-- ============ 3. 解決策 ============ -->
 <section>
   <div class="wrap">
-    <span class="eyebrow reveal">HOW IT WORKS</span>
-    <h2 class="reveal">やることは<br><span class="mark">声で答えるだけ</span></h2>
-    <div class="img-slot reveal">【画像スロット】スマホに話しかける人のイラスト(いらすとや等)</div>
-    <div class="steps">
-      <div class="step reveal"><span class="no">STEP 1</span><div class="ico">📩</div><h3>今日の3問が届く</h3><p>「子どもの頃、時間を忘れてやっていたことは?」など、答えやすい質問から始まります。</p></div>
-      <div class="step reveal"><span class="no">STEP 2</span><div class="ico">🎙️</div><h3>声で3〜5分、話す</h3><p>書く必要はありません。うまく話そうとしなくて大丈夫。話した内容は自動で文字になります。</p></div>
-      <div class="step reveal"><span class="no">STEP 3</span><div class="ico">📘</div><h3>「私の取扱説明書」が完成</h3><p>夢・「無理」の理由・最初の一歩が、1つのファイルにまとまります。どのAIにも渡せます。</p></div>
+    <span class="eyebrow reveal">だから、つくりました</span>
+    <h2 class="reveal">書かなくていい。<br><span class="mark">話すだけ</span>の自分ノート</h2>
+    <div class="solution reveal">
+      <img class="fig" src="images/voice.png" width="273" height="400" alt="マイクを持って話す男性のイラスト" loading="lazy">
+      <div class="copy">
+        <p>ノートに向かって「夢を書きなさい」と言われても、ペンは止まります。</p>
+        <p>でも、質問されて<b>声で答える</b>なら、言葉は意外と出てきます。</p>
+        <p>毎日3つの質問に、3〜5分話すだけ。話した内容は自動で文字になり、30日後には<span class="mark">「私の取扱説明書」</span>という1冊のノートにまとまります。</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ============ 30日 ============ -->
+<!-- ============ 4. 使い方 ============ -->
+<section class="bg-cream">
+  <div class="wrap">
+    <span class="eyebrow reveal">使い方</span>
+    <h2 class="reveal">やることは、3つだけ</h2>
+    <div class="steps">
+      <div class="step reveal"><span class="no">STEP 1</span><div class="ico">📩</div><div><h3>今日の3問が届く</h3><p>答えやすい質問から始まります。</p></div></div>
+      <div class="step reveal"><span class="no">STEP 2</span><div class="ico"><img src="images/voice.png" width="273" height="400" alt="" loading="lazy"></div><div><h3>声で3〜5分、話す</h3><p>うまく話す必要はありません。自動で文字になります。</p></div></div>
+      <div class="step reveal"><span class="no">STEP 3</span><div class="ico"><img src="images/manual.png" width="356" height="400" alt="" loading="lazy"></div><div><h3>取扱説明書が完成</h3><p>夢・「無理」の理由・最初の一歩が、1冊にまとまります。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. 中身を見せる(質問サンプル) ============ -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow reveal">たとえば、こんな質問</span>
+    <h2 class="reveal">中身を、少しだけ<br>お見せします</h2>
+    <div class="qs">
+      <div class="q reveal"><small>1日目</small><p>子どもの頃、時間を忘れてやっていたことは何ですか?</p></div>
+      <div class="q reveal"><small>12日目</small><p>お金も時間も気にしなくていいとしたら、1年後、何をしていますか?</p></div>
+      <div class="q reveal"><small>23日目</small><p>その「無理」の理由は、事実ですか? 思い込みですか?</p></div>
+    </div>
+    <p class="center sub reveal" style="margin-top:18px">全90問。正解はありません。「わからない」と答えてもOKです。</p>
+  </div>
+</section>
+
+<!-- ============ 6. 30日 ============ -->
 <section class="days">
   <div class="wrap">
-    <span class="eyebrow reveal">30 DAYS</span>
-    <h2 class="reveal">30日で、<br>こう進みます</h2>
+    <span class="eyebrow reveal">30日間の流れ</span>
+    <h2 class="reveal">休みながらでも、<br>ちゃんと進みます</h2>
     <div class="cal reveal" aria-hidden="true">
-      <i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i>
-      <i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i>
-      <i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="hot"></i>
+      <i class="on"></i><i class="on"></i><i class="on"></i><i class="off"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="off"></i><i class="off"></i>
+      <i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="off"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i>
+      <i class="on"></i><i class="on"></i><i class="off"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="goal"></i>
     </div>
-    <p class="center sub reveal" style="color:#aeb8c9">1日ごとに○がつく。休んだ日があっても、続きから再開できます。</p>
+    <p class="legend reveal">● 答えた日 ○ 休んだ日。休んでも、続きから再開できます。</p>
     <div class="phase">
       <div class="reveal"><b>1〜10日目|思い出す</b><br>子どもの頃の「好き」、うらやましかったこと、心が動いたことを掘り起こします。</div>
-      <div class="reveal"><b>11〜20日目|蓋を開ける</b><br>お金・時間・年齢の制約を外して、「本当はどうしたいか」を言葉にします。</div>
+      <div class="reveal"><b>11〜20日目|ふたを開ける</b><br>お金・時間・年齢の制約を外して、「本当はどうしたいか」を言葉にします。</div>
       <div class="reveal"><b>21〜30日目|一歩にする</b><br>「無理」の理由を仕分けて、3日以内にできる最初の一歩を決めます。</div>
     </div>
   </div>
 </section>
 
-<!-- ============ 事実か思い込みか ============ -->
+<!-- ============ 7. 独自性 ============ -->
 <section class="bg-cream">
   <div class="wrap">
-    <span class="eyebrow reveal">THE KEY</span>
-    <h2 class="reveal">「無理」は、本当に<br><span class="mark">事実</span>ですか?</h2>
-    <p class="center reveal">夢を聞いて終わりではありません。「無理」と思った理由を<b>事実</b>と<b>思い込み</b>に仕分けます。</p>
+    <span class="eyebrow reveal">ここが、いちばん大事なところ</span>
+    <h2 class="reveal">その「無理」は、<br>本当に<span class="mark">事実</span>ですか?</h2>
+    <img class="key-visual reveal" src="images/chest-open.png" width="400" height="384" alt="ふたが開いた宝箱のイラスト" loading="lazy">
+    <p class="center reveal">夢を聞いて終わりではありません。「無理」と思った理由を、<b>事実</b>と<b>思い込み</b>に仕分けます。</p>
     <div class="ba">
       <div class="row reveal"><div class="before">お金がないから無理</div><div class="after">いくらあれば足りる? 小さい版なら今月できる</div></div>
       <div class="row reveal"><div class="before">もう年だから遅い</div><div class="after">同じ年で始めた人はいる? 何を準備すればいい?</div></div>
-      <div class="row reveal"><div class="before">今じゃない</div><div class="after">いつ・何が揃えば「今」になる?</div></div>
+      <div class="row reveal"><div class="before">今じゃない</div><div class="after">いつ・何がそろえば「今」になる?</div></div>
     </div>
-    <p class="center reveal" style="margin-top:20px">仕分けると、<span class="red">思っていたより動かせるもの</span>が見つかります。</p>
+    <p class="center reveal" style="margin-top:22px">仕分けてみると、<span class="em">思っていたより動かせるもの</span>が見つかります。</p>
   </div>
 </section>
 
-<!-- ============ プライバシー ============ -->
-<section class="lock">
-  <div class="wrap">
-    <span class="eyebrow reveal">PRIVACY</span>
-    <h2 class="reveal">あなたの夢は、<br>あなたのiPhoneの中だけに</h2>
-    <ul class="checks">
-      <li class="reveal">音声の文字起こしは、<span class="ph">【要確認】iPhone内で処理</span></li>
-      <li class="reveal">保存先はあなたのiPhoneの中。アカウント登録も不要</li>
-      <li class="reveal">AIやコーチに見せるのは、<span class="mark">あなたが選んだ部分だけ</span></li>
-    </ul>
-    <p class="sub center">※実際の仕様と一致していることを確認してから公開します。</p>
-  </div>
-</section>
-
-<!-- ============ 完成後 ============ -->
+<!-- ============ 8. 夢の例 ============ -->
 <section>
   <div class="wrap">
-    <span class="eyebrow reveal">AFTER 30 DAYS</span>
-    <h2 class="reveal">できあがったら、<br>誰と進むか選べます</h2>
-    <div class="opts">
-      <div class="opt reveal"><h3>🚶 ひとりで進める</h3><p>完成したファイルを見返して、最初の一歩を自分のペースで。</p></div>
-      <div class="opt reveal"><h3>🤖 AIコーチと進める</h3><p>ChatGPT・Claudeなど、お好みのAIに渡して相談。毎回の説明は不要です。</p></div>
-      <div class="opt rec reveal"><h3>🤝 コーチと進める</h3><p>としコーチ、またはとしのコーチ仲間と、完成したファイルをもとに面談。<span class="ph">【料金・時間を記入】</span></p></div>
+    <span class="eyebrow reveal">たとえば</span>
+    <h2 class="reveal">ふたの下には、<br>こんな夢が眠っています</h2>
+    <div class="dream reveal">
+      <img src="images/cruise.png" width="400" height="249" alt="大きな客船のイラスト" loading="lazy">
+      <blockquote>「いつか、船で世界を回ってみたい」<br><span class="sub" style="font-family:'BIZ UDPGothic';font-weight:400">ずっと胸にしまっていた、そんな一言から計画が始まることがあります。</span></blockquote>
     </div>
-    <p class="center reveal" style="margin-top:28px">「コーチングって、ちょっと胡散臭い」。そう思って当然です。<br>でも、目標に早くたどり着く方法として、経営者やアスリートが使い続けてきたのも事実です。<br><b>まずは、ひとりで、声に出すことから。</b></p>
+    <p class="center sub reveal" style="margin-top:14px">※イメージです。実在の利用者の体験談ではありません。</p>
   </div>
 </section>
 
-<!-- ============ 作った人 ============ -->
+<!-- ============ 9. 完成後 ============ -->
+<section class="bg-mint">
+  <div class="wrap">
+    <span class="eyebrow reveal">30日のあと</span>
+    <h2 class="reveal">できあがったノートで、<br>進み方を選べます</h2>
+    <div class="opts">
+      <div class="opt reveal"><img src="images/solo.png" width="400" height="392" alt="" loading="lazy"><div><h3>ひとりで進める</h3><p>ノートを見返して、最初の一歩を自分のペースで。</p></div></div>
+      <div class="opt reveal"><img src="images/ai.jpg" width="400" height="400" alt="" loading="lazy"><div><h3>AIに相談する</h3><p>ChatGPTやClaudeにノートを渡せば、毎回の説明は不要。決めるのは、あなたです。</p></div></div>
+      <div class="opt rec reveal"><img src="images/ok.png" width="367" height="400" alt="" loading="lazy"><div><h3>コーチと話す</h3><p>同世代のコーチと、ノートをもとに面談。<span class="ph">【料金・時間を記入】</span></p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10. プライバシー ============ -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow reveal">安心して話せるように</span>
+    <h2 class="reveal">あなたの夢は、<br>あなたのiPhoneの中だけに</h2>
+    <div class="privacy">
+      <img class="fig reveal" src="images/key.png" width="400" height="400" alt="鍵のイラスト" loading="lazy">
+      <ul class="checks">
+        <li class="reveal">音声の文字起こしは<span class="ph">【要確認】iPhone内で処理</span></li>
+        <li class="reveal">保存先はあなたのiPhoneの中。アカウント登録も不要</li>
+        <li class="reveal">AIやコーチに見せるのは、あなたが選んだ部分だけ</li>
+      </ul>
+    </div>
+    <p class="sub center" style="margin-top:14px">※公開前に、実際の仕様と一致していることを確認します。</p>
+  </div>
+</section>
+
+<!-- ============ 11. 向いている人/向いていない人 ============ -->
 <section class="bg-cream">
   <div class="wrap">
-    <span class="eyebrow reveal">ABOUT</span>
-    <h2 class="reveal">作った人</h2>
-    <div class="img-slot reveal">【画像スロット】プロフィール写真</div>
-    <p class="reveal"><span class="ph">【自己紹介:名前、コーチ歴、作った理由】</span><br>例:「AIが変わるたびに、一から教え直すのに疲れた。自分が欲しかったから作りました。」</p>
+    <span class="eyebrow reveal">正直にお伝えします</span>
+    <h2 class="reveal">向いている人、<br>向いていない人</h2>
+    <div class="fit">
+      <div class="yes reveal"><h3>🙆 向いている人</h3><ul><li>「いつか」をそろそろ形にしたい</li><li>書くより話すほうがラク</li><li>自分の考えを、自分の言葉で整理したい</li></ul></div>
+      <div class="no reveal"><h3>🙅 向いていない人</h3><ul><li>すぐに結果や答えがほしい</li><li>誰かに決めてもらいたい</li><li>心身の不調の治療を目的としている(医療機関へご相談ください)</li></ul></div>
+    </div>
   </div>
 </section>
 
-<!-- ============ FAQ ============ -->
+<!-- ============ 12. 作った人 ============ -->
 <section>
   <div class="wrap">
-    <span class="eyebrow reveal">FAQ</span>
-    <h2 class="reveal">よくある質問</h2>
-    <details><summary>パソコンやAIが苦手でも使えますか?</summary><p>使えます。質問に声で答えるだけです。Claudeなどの導入が必要な方には、設定のお手伝いもできます。<span class="ph">【サービス内容を確認】</span></p></details>
-    <details><summary>毎日続けないとダメですか?</summary><p>いいえ。休んでも大丈夫です。30日分の質問を、自分のペースで進められます。</p></details>
-    <details><summary>声を出せない環境のときは?</summary><p>文字入力でも答えられます。<span class="ph">【実装予定を確認】</span></p></details>
-    <details><summary>夢が見つからなくても大丈夫ですか?</summary><p>大丈夫です。「やりたくないこと」「うらやましいと思ったこと」からヒントを探す質問も用意しています。</p></details>
-    <details><summary>料金はいくらですか?</summary><p><span class="ph">【料金を記入】</span></p></details>
-    <details><summary>医療やカウンセリングの代わりになりますか?</summary><p>いいえ。目標や仕事の整理のためのものです。心身の不調や治療が必要な場合は、専門の医療機関にご相談ください。</p></details>
+    <span class="eyebrow reveal">作った人</span>
+    <h2 class="reveal">はじめまして、<br>としです</h2>
+    <div class="profile reveal">
+      <div class="avatar"><span class="ph">【顔写真】</span></div>
+      <p><span class="ph">【自己紹介:本名または屋号、年代、コーチ歴、仕事】</span></p>
+      <p>AIが新しくなるたびに、自分のことを一から説明し直す。それに疲れて「自分の取扱説明書があればいいのに」と思ったのが始まりです。</p>
+      <p>同じように、忙しさの中で夢にふたをしてきた同世代の方に、まず<b>ひとりで、声に出してみる</b>きっかけを届けたいと思っています。</p>
+    </div>
   </div>
 </section>
 
-<!-- ============ CTA ============ -->
-<section id="signup" class="final">
+<!-- ============ 13. FAQ ============ -->
+<section class="bg-cream">
   <div class="wrap">
-    <span class="eyebrow" style="color:var(--yellow)">START</span>
-    <h2>蓋を、そっと<br><span class="mark">開けてみませんか?</span></h2>
-    <p>公開時にご案内します。事前登録の方には<br><span class="ph">【特典:例 質問セット10問ミニ版/初回面談の優待】</span><br>をお送りします。</p>
-    <div class="btn-wrap"><a class="btn" href="#"><small class="ph">【登録フォームのURLへ差し替え】</small>無料で事前登録する</a></div>
+    <span class="eyebrow reveal">よくある質問</span>
+    <h2 class="reveal">ご不安に、お答えします</h2>
+    <details><summary>スマホやAIが苦手でも使えますか?</summary><p>使えます。質問に声で答えるだけです。設定に不安がある方には、お手伝いもしています。<span class="ph">【サービス内容を確認】</span></p></details>
+    <details><summary>事前登録したら、売り込みの連絡が来ますか?</summary><p>いいえ。お送りするのは、公開のお知らせと特典だけです。不要になれば、いつでも解除できます。</p></details>
+    <details><summary>毎日続けないとダメですか?</summary><p>いいえ。休んでも大丈夫です。続きから再開できます。</p></details>
+    <details><summary>声を出せない場所では?</summary><p>文字入力でも答えられます。<span class="ph">【実装予定を確認】</span></p></details>
+    <details><summary>夢が見つからなくても大丈夫?</summary><p>大丈夫です。「うらやましかったこと」「やりたくないこと」からヒントを探す質問も用意しています。</p></details>
+    <details><summary>料金はかかりますか?</summary><p>事前登録は無料です。アプリの料金は<span class="ph">【料金を記入】</span>の予定です。</p></details>
+    <details><summary>医療やカウンセリングの代わりになりますか?</summary><p>なりません。目標や考えの整理のためのものです。心身の不調がある場合は、医療機関にご相談ください。</p></details>
+  </div>
+</section>
+
+<!-- ============ 14. 行動 ============ -->
+<section id="signup" class="final">
+  <div class="wrap on-dark">
+    <img class="joy" src="images/joy.png" width="318" height="400" alt="ガッツポーズをする男の子のイラスト" loading="lazy">
+    <span class="eyebrow">さいごに</span>
+    <h2>ふたを、そっと<br><span class="y">開けてみませんか?</span></h2>
+    <div class="offer">
+      <p style="margin:0"><b>事前登録の特典</b><br><span class="ph">【例:公開前に「最初の10問」を先行体験/先着〇名のモニター枠】</span></p>
+    </div>
+    <div class="cta-box">
+      <a class="btn" href="#"><span class="ph" style="font-size:13px">【LINE/フォームのURLへ差し替え】</span>無料で事前登録する</a>
+      <div class="micro"><span>30秒で完了</span><span>売り込みなし</span><span>いつでも解除OK</span></div>
+      <p style="font-size:13px;margin-top:16px;color:#e8edf5">ご登録いただいた情報は、公開のご案内と特典のお届けにのみ使います。<span class="ph">【プライバシーポリシーへのリンク】</span></p>
+    </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <p>※効果には個人差があります。このサービスは、目標達成を保証するものではありません。</p>
-    <p><span class="ph">【運営者名・連絡先・プライバシーポリシーへのリンク】</span></p>
+    <p>※感じ方や結果には個人差があります。本サービスは、目標の達成を保証するものではありません。</p>
+    <p>※本サービスは医療行為・カウンセリングではありません。</p>
+    <p>イラスト:いらすとや</p>
+    <p><span class="ph">【運営者名・お問い合わせ先】</span></p>
   </div>
 </footer>
 
-<div class="sticky"><a class="btn" href="#signup">無料で事前登録する</a></div>
+<div class="sticky" id="sticky"><a class="btn" href="#signup">無料で事前登録する</a></div>
 
 <script>
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  // 追従CTA:ファーストビューを過ぎたら表示、最終CTA付近では隠す
+  const sticky=document.getElementById('sticky'),hero=document.querySelector('.hero'),signup=document.getElementById('signup');
+  let pastHero=false,atSignup=false;
+  const upd=()=>sticky.classList.toggle('show',pastHero&&!atSignup);
+  new IntersectionObserver(([e])=>{pastHero=!e.isIntersecting;upd()}).observe(hero);
+  new IntersectionObserver(([e])=>{atSignup=e.isIntersecting;upd()}).observe(signup);
 </script>
 </body>
 </html>
